@@ -13,7 +13,7 @@ export default function Project({ data }) {
         }}
       />
       {data.airtable.data.Images.map( (image, index) => (
-        <img key={index} alt="Image" src={image.url} width={400}/>
+        <img key={index} alt="project images" src={image.url} width={400}/>
       ))}
       <Link to={'/'}>back to home</Link>
     </Layout>
