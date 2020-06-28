@@ -12,6 +12,9 @@ export default function Project({ data }) {
           __html: data.airtable.data.Body.childMarkdownRemark.html,
         }}
       />
+      {data.airtable.data.Images.map( (image, index) => (
+        <img key={index} alt="Image" src={image.url} width={400}/>
+      ))}
       <Link to={'/'}>back to home</Link>
     </Layout>
   )
@@ -29,6 +32,9 @@ export const query = graphql`
             childMarkdownRemark {
               html
             }
+          }
+          Images {
+            url
           }
         }
     }
