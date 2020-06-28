@@ -1,4 +1,4 @@
-require("dotenv").config()
+const dotenv = require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,12 +33,13 @@ module.exports = {
     {
       resolve: `gatsby-source-airtable`,
       options: {
-        apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
+        apiKey: process.env.AIRTABLE_API_KEY,
         concurrency: 5, // default, see using markdown and attachments for more information
         tables: [
           {
-            baseId: process.env.GATSBY_AIRTABLE_BASE,
-            tableName: process.env.GATSBY_AIRTABLE_TABLE,
+            baseId: process.env.AIRTABLE_BASE,
+            tableName: process.env.AIRTABLE_TABLE,
+            mapping: { Body: 'text/markdown' },
             separateNodeType: false, // boolean, default is false, see the documentation on naming conflicts for more information
             separateMapType: false, // boolean, default is false, see the documentation on using markdown and attachments for more information
           }

@@ -7,7 +7,11 @@ export default function Project({ data }) {
 
   return (
     <Layout>
-      <div>Here is the page for record for <strong>{data.airtable.data.slug}</strong>.</div>
+      <main
+        dangerouslySetInnerHTML={{
+          __html: data.airtable.data.Body.childMarkdownRemark.html,
+        }}
+      />
       <Link to={'/'}>back to home</Link>
     </Layout>
   )
@@ -21,6 +25,11 @@ export const query = graphql`
           slug
           Author
           Title
+          Body {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
     }
 }`

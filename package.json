@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "gatsby": "^2.23.10",
     "gatsby-image": "^2.4.8",
     "gatsby-plugin-manifest": "^2.4.13",
@@ -13,6 +14,7 @@
     "gatsby-plugin-sharp": "^2.6.13",
     "gatsby-source-airtable": "^2.1.1",
     "gatsby-source-filesystem": "^2.3.13",
+    "gatsby-transformer-remark": "^2.8.19",
     "gatsby-transformer-sharp": "^2.5.6",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
