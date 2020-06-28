@@ -7,22 +7,21 @@ import SEO from "../components/seo"
 
 export default function IndexPage({data}) {
 
-  const { edges: rows } = data.allAirtable;
+  const { edges: projects } = data.allAirtable;
   return (
       <Layout>
         <SEO title="Home" />
-        <h1>Home</h1>
+        <h1>Projects</h1>
         {
-          rows.map(({ node: row }, index) => (
+          projects.map(({ node: project }, index) => (
               <div 
                 key={index} 
                 style={{
                   margin: `4vh 0`,
                 }} 
               >
-                  <div>{row.data.Title}</div>
-                  <div>{row.data.Author}</div>
-                  <Link to={`/${row.data.slug}`}>link to page</Link>
+                <Link to={`/${project.data.slug}`}><h4>{project.data.Title}</h4></Link>
+                <h5>by {project.data.Author}</h5>
               </div>
           ))
         }
