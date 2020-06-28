@@ -1,8 +1,10 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Airtable CMS + Gatsby`,
+    description: `Boilerplate for using Airtable as a CMS with a Gatsby frontend.`,
+    author: `@kallirroi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,8 +29,20 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
+        concurrency: 5, // default, see using markdown and attachments for more information
+        tables: [
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE,
+            tableName: process.env.GATSBY_AIRTABLE_TABLE,
+            separateNodeType: false, // boolean, default is false, see the documentation on naming conflicts for more information
+            separateMapType: false, // boolean, default is false, see the documentation on using markdown and attachments for more information
+          }
+        ]
+      }
+    },
   ],
 }
