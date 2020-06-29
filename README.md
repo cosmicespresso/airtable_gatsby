@@ -7,9 +7,12 @@
 It uses `gatsby-source-airtable` to work with the Airtable API [link](https://github.com/jbolda/gatsby-source-airtable).
 
 ### Airtable
-This is how the Airtable used above looks like: <img src="screenshot.png">. In order to be able to get data from an Airtable instance, you need to have an Airtable API key, the Airtable ID of the base, and the name of the Table (in this case `Projects`). Airtable has excellent <a href="https://airtable.com/api">guides</a> on how to do that.
+This is how the Airtable used above looks like:
+<img src="screenshot.png">
 
-Once you have the above, you need `gatsby-config.js` to be able to access them, but at the same time you do NOT want to commit these credentials to Github. As you can see below they are stored in an `env` process (which is local to your machine, and set up on wherever you are hosting your website as `environment variables`).
+In order to be able to get data from an Airtable instance, you need to have an Airtable API key, the Airtable ID of the base, and the name of the Table (in this case `Projects`). Airtable has excellent <a href="https://airtable.com/api">guides</a> on how to do that.
+
+Once you have the above, you need `gatsby-config.js` to be able to access them, but at the same time you <span style="color: #ff5236">do NOT want to commit these credentials to Github</span>. As you can see below they are stored in an `env` process (which is local to your machine, and set up on wherever you are hosting your website as `environment variables`).
 
 ```
 {
