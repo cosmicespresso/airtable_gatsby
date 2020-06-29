@@ -12,8 +12,17 @@ export default function Project({ data }) {
           __html: data.airtable.data.Body.childMarkdownRemark.html,
         }}
       />
-      {data.airtable.data.Images.map( (image, index) => (
-        <img key={index} alt="project images" src={image.url} width={400}/>
+      {data.airtable.data.Images && data.airtable.data.Images.map( (image, index) => (
+        <div key={index}
+            style={{
+              backgroundImage: 'url(' + image.url + ')',
+              backgroundSize: '100%',
+              backgroundPosition: 'top',
+              width:'30vw', 
+              height:'50vh', 
+              margin: '2vh 0'
+              }}>
+            </div>
       ))}
       <Link to={'/'}>back</Link>
     </Layout>
