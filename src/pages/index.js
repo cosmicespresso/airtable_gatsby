@@ -31,16 +31,16 @@ export default function IndexPage({data}) {
 
 export const query = graphql`
     query {
-        allAirtable  {
-          edges {
-            node {
-              data {
-                Author
-                Title
-                slug
-              }
+      allAirtable(sort: {fields: data___orderID})  {
+        edges {
+          node {
+            data {
+              Author
+              Title
+              slug
             }
           }
         }
+      }
     }
 `
