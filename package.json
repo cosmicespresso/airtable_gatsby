@@ -14,7 +14,7 @@
     "gatsby-plugin-sharp": "^2.6.13",
     "gatsby-source-airtable": "^2.1.1",
     "gatsby-source-filesystem": "^2.3.13",
-    "gatsby-transformer-remark": "^2.8.19",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.6",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
